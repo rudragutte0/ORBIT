@@ -1,2 +1,2 @@
 # ORBIT
-B.E. rover project
+Off-road Robotic Bot for Inspection & Transport
