@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT Control</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>ORBIT</h1>
+            <p>Rover Control System</p>
+        </div>
+
+        <div id="connection-status">
+            ● DISCONNECTED
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- DRIVE -->
+        <section class="panel">
+
+            <h2>Drive</h2>
+
+            <div class="drive-area">
+
+                <div id="joystick">
+                    <div id="joystick-stick">●</div>
+                </div>
+
+                <div class="drive-values">
+                    <p>Throttle: <span id="throttle">0%</span></p>
+                    <p>Steering: <span id="steering">0%</span></p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARM -->
+        <section class="panel">
+
+            <h2>Arm</h2>
+
+            <div class="arm-controls">
+
+                <div class="control-group">
+                    <label>X</label>
+                    <input id="arm-x" type="range" min="-100" max="100" value="0">
+                    <span id="arm-x-value">0</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Y</label>
+                    <input id="arm-y" type="range" min="-100" max="100" value="0">
+                    <span id="arm-y-value">0</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Z</label>
+                    <input id="arm-z" type="range" min="-100" max="100" value="0">
+                    <span id="arm-z-value">0</span>
+                </div>
+
+            </div>
+
+            <p class="arm-note">
+                Arm position will later be converted to joint angles using inverse kinematics.
+            </p>
+
+        </section>
+
+
+        <!-- STATUS -->
+        <section class="panel">
+
+            <h2>Status</h2>
+
+            <div class="status-grid">
+
+                <div>
+                    <span>Battery</span>
+                    <strong id="battery">-- V</strong>
+                </div>
+
+                <div>
+                    <span>Pitch</span>
+                    <strong id="pitch">--°</strong>
+                </div>
+
+                <div>
+                    <span>Roll</span>
+                    <strong id="roll">--°</strong>
+                </div>
+
+                <div>
+                    <span>Wi-Fi</span>
+                    <strong id="wifi">Not connected</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EMERGENCY STOP -->
+
+        <button id="stop-button">
+            EMERGENCY STOP
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
